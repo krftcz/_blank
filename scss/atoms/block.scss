@@ -1,0 +1,49 @@
+$cols:15;
+$col:(100%/$cols);
+
+.block {
+	&-inner {
+		max-width:1440px;
+		margin:0 auto;
+	}
+	&-col {
+
+		@for $i from 1 through $cols {
+			&.view-sm#{$i} {
+				@media (min-width:$break-sm) and (max-width:$break-md - 1) {
+					width:$col*$i;
+				}
+			}
+			&.view-sm-ml#{$i} {
+				@media (min-width:$break-sm) and (max-width:$break-md - 1) {
+					margin-left: $col*$i;
+				}
+			}
+			&.view-md#{$i} {
+				@media (min-width:$break-md) and (max-width:$break-lg - 1) {
+					width:$col*$i;
+				}
+			}
+			&.view-md-ml#{$i} {
+				@media (min-width:$break-md) and (max-width:$break-lg - 1) {
+					margin-left: $col*$i;
+				}
+			}
+			&.view-lg#{$i} {
+				@media (min-width:$break-lg) {
+					width:$col*$i;
+				}
+			}
+			&.view-lg-ml#{$i} {
+				@media (min-width:$break-lg) {
+					margin-left: $col*$i;
+				}
+			}
+		}
+	}
+}
+
+ // for historic reason
+.inner {
+	@extend .block-inner;
+}

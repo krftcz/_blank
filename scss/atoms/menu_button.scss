@@ -1,0 +1,47 @@
+.menu_button {
+	position:relative;
+	display:inline-block;
+	width:40px;
+	height:40px;
+	cursor:pointer;
+	user-select:none;
+
+	@media (min-width:$break-md) {
+		display:none;
+	}
+	span {
+		top:0;
+		bottom:0;
+		margin:auto;
+
+		&, &:before, &:after {
+			@include show;
+			position:absolute;
+			left:0;
+			right:0;
+			height:5px;
+			background:black;
+			transition:$trans;
+		}
+		&:before {
+			top:-10px;
+		}
+		&:after {
+			bottom:-10px;
+		}
+	}
+	.has-nav_open & {
+		span {
+			background:rgba(black, 0);
+
+			&:before {
+				top:0;
+				transform:rotate(45deg);
+			}
+			&:after {
+				bottom:0;
+				transform:rotate(-45deg);
+			}
+		}
+	}
+}

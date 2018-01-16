@@ -1,0 +1,129 @@
+body {
+	font-family:$font-base;
+
+	*,
+	*:after,
+	*:before {
+		box-sizing:border-box;
+	}
+}
+
+::selection {
+	background:rgba(#acacac, 0.5);
+}
+::-moz-selection {
+	background:rgba(#acacac, 0.5);
+}
+
+a {
+	color:inherit;
+	text-decoration:inherit;
+}
+
+a, input[type="submit"], button {
+	cursor:pointer;
+}
+
+img {
+	max-width:100%;
+	height:auto;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+	font-family:inherit;
+}
+
+.clear {
+	clear:both;
+}
+
+[data-expandable] {
+	display:none;
+
+	&.view-active {
+		display:block;
+	}
+}
+
+.acenter {
+	position:absolute;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	margin:auto;
+}
+
+.no_list {
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+
+.has-va {
+	&:before {
+		content:"";
+		display:inline-block;
+		height:100%;
+		margin-left:-0.28em;
+		vertical-align:middle;
+	}
+	& > * {
+		display:inline-block;
+		vertical-align:middle;
+		height:auto;
+	}
+}
+
+.scroll-inside {
+	overflow-x:auto;
+}
+
+$breakpoints: (
+	lg: $break-lg,
+	md: $break-md,
+	sm: $break-sm,
+	xs: $break-xs,
+	xs2: $break-xs2,
+);
+@each $name, $breakpoint in $breakpoints {
+	.under_#{$name} {
+		display:none;
+
+		@media (max-width:$breakpoint - 1) {
+			display:block;
+
+			&.is-inline {display:inline-block;}
+		}
+	}
+	.above_#{$name} {
+		display:none;
+
+		@media (min-width:$breakpoint) {
+			display:block;
+
+			&.is-inline {display:inline-block;}
+		}
+	}
+}
+
+// wp defaults
+.alignnone						{ margin: 5px 20px 20px 0; }
+.aligncenter, div.aligncenter	{ display: block; margin: 5px auto 5px auto; }
+.alignright						{ float:right; margin: 5px 0 20px 20px; }
+.alignleft						{ float: left; margin: 5px 20px 20px 0; }
+.aligncenter					{ display: block; margin: 5px auto 5px auto; }
+a img.alignright				{ float: right; margin: 5px 0 20px 20px; }
+a img.alignnone					{ margin: 5px 20px 20px 0; }
+a img.alignleft					{ float: left; margin: 5px 20px 20px 0; }
+a img.aligncenter				{ display: block; margin-left: auto; margin-right: auto }
+.wp-caption						{ background: #fff; border: 1px solid #f0f0f0; max-width: 96%; padding: 5px 3px 10px; text-align: center; }
+.wp-caption.alignnone			{ margin: 5px 20px 20px 0; }
+.wp-caption.alignleft			{ margin: 5px 20px 20px 0; }
+.wp-caption.alignright			{ margin: 5px 0 20px 20px; }
+.wp-caption img					{ border: 0 none; height: auto; margin: 0; max-width: 98.5%; padding: 0; width: auto; }
+.wp-caption p.wp-caption-text	{ font-size: 11px; line-height: 17px; margin: 0; padding: 0 4px 5px; }

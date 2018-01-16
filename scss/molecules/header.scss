@@ -1,0 +1,12 @@
+.header {
+	.inner {
+		display:flex;
+		align-items:center;
+	}
+	&-nav {
+		&-main {
+			@extend .no_list;
+			display:flex;
+		}
+	}
+}
