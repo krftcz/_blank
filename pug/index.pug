@@ -1,38 +1,14 @@
 doctype html
-<html lang="cs">
-	<head>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-		<meta charset="utf-8">
-		<title>Obecní dům</title>
-		<!--	http://realfavicongenerator.net/	-->
-		<link type="text/css" rel="stylesheet" href="//fast.fonts.net/cssapi/7833f96f-412f-4395-ae7e-a96aa0ae0768.css"/>
-		<link href="/css/style.css" rel="stylesheet" />
-	</head>
-	<body>
+html(lang="cs")
+	head
 
-		include includes/header.html
 
-		<div class="block">
-			<div class="block-inner">
-				<div class="slides">
-					<div class="slide">
-						<div class="title">Miloslav Troup | 100 let</div>
-						<div class="title">15.6. - 15.9. 2017</div>
-						<a href="#" class="btn">Vstupenky</a>
-						<img src="/images/slide-1.png" alt="">
-					</div>
-				</div>
-			</div>
-		</div>
+		meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
+		meta(charset="utf-8")
+		title Title
+		link(href="/css/style.css" rel="stylesheet")
 
-		<a href="#" class="box">
-			<div class="box-title">
-				Blanka Matragi
-				TIMELESS
-			</div>
-		</a>
+		include includes/header.pug
 
-		include includes/footer.html
 
-	</body>
-</html>
+		include includes/footer.pug
